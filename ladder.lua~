@@ -1,0 +1,113 @@
+-- Ladders portion of Colored Wood mod by Vanessa Ezekowitz  ~~  2012-07-17
+-- based on my unified dyes modding template.
+--
+-- License: WTFPL
+--
+-- All this part does is register all the alternate crafts to turn
+-- any stick color into a standard ladder.  To compensate for having
+-- used up a portion of dye, 7 sticks gives 2 ladders instead of just
+-- one.  Ladders are still crafted in the usual manner, but all 7
+-- sticks must be the same color.
+--
+--  CS -- CS
+--  CS CS CS
+--  CS -- CS
+--
+
+-- =================================================
+-- All variants and shades, except "light" and greys.
+
+shades = {
+	"dark_",
+	"medium_",
+	""		-- represents "no special shade name", e.g. bright.
+}
+
+hues = {
+	"red",
+	"orange",
+	"yellow",
+	"lime",
+	"green",
+	"aqua",
+	"cyan",
+	"skyblue",
+	"blue",
+	"violet",
+	"magenta",
+	"redviolet"
+}
+
+greys = {
+	"black",
+	"darkgrey",
+	"mediumgrey",
+	"lightgrey",
+	"white"
+}
+
+for shade = 1, 3 do
+
+	shadename = shades[shade]
+
+	for hue = 1, 12 do
+
+		stickname    = colored_block_modname..":stick_"..shadename..hues[hue]
+		s50stickname    = colored_block_modname..":stick_"..shadename..hues[hue].."_s50"
+
+		minetest.register_craft({
+		        output = "default:ladder 2" ,
+		        recipe = {
+		                {stickname, ""       , stickname },
+		                {stickname, stickname, stickname },
+		                {stickname, ""       , stickname }
+		        }
+		})
+
+		minetest.register_craft({
+		        output = "default:ladder 2" ,
+		        recipe = {
+		                {s50stickname, ""          , s50stickname },
+		                {s50stickname, s50stickname, s50stickname },
+		                {s50stickname, ""          , s50stickname }
+		        }
+		})
+
+
+	end
+end
+
+-- ===========
+-- Light shades
+
+for hue = 1, 12 do
+	stickname    = colored_block_modname..":stick_light_"..hues[hue]
+
+	minetest.register_craft({
+	        output = "default:ladder 2" ,
+	        recipe = {
+	                {stickname, ""       , stickname },
+	                {stickname, stickname, stickname },
+	                {stickname, ""       , stickname }
+	        }
+	})
+end
+	
+
+-- =====
+-- Greys
+
+for grey = 1,5 do
+
+	stickname    = colored_block_modname..":stick_"..greys[grey]
+
+	minetest.register_craft({
+	        output = "default:ladder 2" ,
+	        recipe = {
+	                {stickname, ""       , stickname },
+	                {stickname, stickname, stickname },
+	                {stickname, ""       , stickname }
+	        }
+	})
+
+end
