@@ -118,7 +118,11 @@ for shade = 1, 3 do
 			paramtype = "light",
 			walkable = colored_block_walkable,
 			groups = colored_block_groups,
-			sounds = colored_block_sound
+			sounds = colored_block_sound,
+			selection_box = {
+				type = "fixed",
+				fixed = {-1/7, -1/2, -1/7, 1/7, 1/2, 1/7},
+			},
 		})
 
 		minetest.register_node(s50colorname, {
@@ -131,7 +135,11 @@ for shade = 1, 3 do
 			paramtype = "light",
 			walkable = colored_block_walkable,
 			groups = colored_block_groups,
-			sounds = colored_block_sound
+			sounds = colored_block_sound,
+			selection_box = {
+				type = "fixed",
+				fixed = {-1/7, -1/2, -1/7, 1/7, 1/2, 1/7},
+			},
 		})
 
 		minetest.register_craft({
@@ -228,7 +236,11 @@ for hue = 1, 12 do
 		paramtype = "light",
 		walkable = colored_block_walkable,
 		groups = colored_block_groups,
-		sounds = colored_block_sound
+		sounds = colored_block_sound,
+		selection_box = {
+			type = "fixed",
+			fixed = {-1/7, -1/2, -1/7, 1/7, 1/2, 1/7},
+		},
 	})
 
 	minetest.register_craft({
@@ -297,7 +309,11 @@ for grey = 1,5 do
 		paramtype = "light",
 		walkable = colored_block_walkable,
 		groups = colored_block_groups,
-		sounds = colored_block_sound
+		sounds = colored_block_sound,
+		selection_box = {
+			type = "fixed",
+			fixed = {-1/7, -1/2, -1/7, 1/7, 1/2, 1/7},
+		},
 	})
 
 	minetest.register_craft({
