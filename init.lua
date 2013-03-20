@@ -1,4 +1,4 @@
--- Colored Wood mod by Vanessa Ezekowitz ~~ 2012-07-17
+-- Colored Wood mod by Vanessa Ezekowitz ~~ 2013-03-20
 -- based on my unifieddyes template.
 --
 -- License:  WTFPL

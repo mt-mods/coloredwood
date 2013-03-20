@@ -8,7 +8,7 @@ colored_block_description = "Wooden Fence"
 neutral_block = "default:fence_wood"
 colored_block_sunlight = "false"
 colored_block_walkable = "true"
-colored_block_groups = {snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=2}
+colored_block_groups = {snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=2, not_in_creative_inventory=1}
 colored_block_sound = "default.node_sound_wood_defaults()"
 
 -- ------------------------------------------------------------------
