@@ -78,7 +78,7 @@ local greys2 = {
 	"White "
 }
 
-greys3 = {
+local greys3 = {
 	"black",
 	"darkgrey_paint",
 	"mediumgrey_paint",
