@@ -3,6 +3,14 @@
 --
 -- License: WTFPL
 
+local coloredwood = {}
+
+coloredwood.enable_stairsplus = true
+
+if minetest.setting_getbool("coloredwood_enable_stairsplus") == false or not minetest.get_modpath("moreblocks") then
+	coloredwood.enable_stairsplus = false
+end
+
 local colored_block_modname = "coloredwood"
 local colored_block_description = "Wood Planks"
 local neutral_block = "default:wood"
@@ -106,8 +114,6 @@ for shade = 1, 3 do
 		minetest.register_node(colorname, {
 			description = nodedesc,
 			tiles = { pngname },
---			inventory_image = pngname, 
---			wield_image = pngname,
 			sunlight_propagates = colored_block_sunlight,
 			paramtype = "light",
 			walkable = colored_block_walkable,
@@ -118,14 +124,41 @@ for shade = 1, 3 do
 		minetest.register_node(s50colorname, {
 			description = s50nodedesc,
 			tiles = { s50pngname },
---			inventory_image = s50pngname, 
---			wield_image = s50pngname,
 			sunlight_propagates = colored_block_sunlight,
 			paramtype = "light",
 			walkable = colored_block_walkable,
 			groups = colored_block_groups,
 			sounds = colored_block_sound
 		})
+
+		if coloredwood.enable_stairsplus then
+
+--			stairsplus:register_all(modname, subname, recipeitem, {fields})
+
+			stairsplus:register_all(
+				"coloredwood",
+				"wood_"..shadename..huename,
+				colorname,
+				{
+					groups = colored_block_groups,
+					tiles =	{ pngname },
+					description = nodedesc,
+					drop = "wood_"..shadename..huename,
+				}
+			)
+
+			stairsplus:register_all(
+				"coloredwood",
+				"wood_"..shadename..huename.."_s50",
+				s50colorname,
+				{
+					groups = colored_block_groups,
+					tiles =	{ s50pngname },
+					description = s50nodedesc,
+					drop = "wood_"..shadename..huename.."_s50",
+				}
+			)
+		end
 
 		minetest.register_craft({
 		        type = "fuel",
@@ -177,14 +210,26 @@ for hue = 1, 12 do
 	minetest.register_node(colorname, {
 		description = nodedesc,
 		tiles = { pngname },
---		inventory_image = pngname, 
---		wield_image = pngname,
 		sunlight_propagates = colored_block_sunlight,
 		paramtype = "light",
 		walkable = colored_block_walkable,
 		groups = colored_block_groups,
 		sounds = colored_block_sound
 	})
+
+	if coloredwood.enable_stairsplus then
+		stairsplus:register_all(
+			"coloredwood",
+			"wood_light_"..huename,
+			colorname,
+			{
+				groups = colored_block_groups,
+				tiles =	{ pngname },
+				description = nodedesc,
+				drop = "wood_light_"..huename,
+			}
+		)
+	end
 
 	minetest.register_craft({
 	        type = "fuel",
@@ -225,14 +270,26 @@ for grey = 1,5 do
 	minetest.register_node(greyshadename, {
 		description = nodedesc,
 		tiles = { pngname },
---		inventory_image = pngname, 
---		wield_image = pngname,
 		sunlight_propagates = colored_block_sunlight,
 		paramtype = "light",
 		walkable = colored_block_walkable,
 		groups = colored_block_groups,
 		sounds = colored_block_sound
 	})
+
+	if coloredwood.enable_stairsplus then
+		stairsplus:register_all(
+			"coloredwood",
+			"wood_"..greyname,
+			greyshadename,
+			{
+				groups = colored_block_groups,
+				tiles =	{ pngname },
+				description = nodedesc,
+				drop = "wood_"..greyname,
+			}
+		)
+	end
 
 	minetest.register_craft({
 	        type = "fuel",

@@ -1,4 +1,4 @@
--- Colored Wood mod by Vanessa Ezekowitz ~~ 2013-03-20
+-- Colored Wood mod by Vanessa Ezekowitz
 -- based on my unifieddyes template.
 --
 -- License:  WTFPL
@@ -16,8 +16,8 @@
 -- Uncolored sticks cannot be dyed separately, but they can still be used
 -- to build colored wooden fences.  These are crafted either by placing six
 -- plain, uncolored sticks into the crafting grid in the usual manner, plus
--- one portion of dye or paint in the upper-left corner of the grid
--- (D = dye or paint, S = uncolored stick):
+-- one portion of dye in the upper-left corner of the grid
+-- (D = dye, S = uncolored stick):
 --
 --  D - -
 --  S S S
@@ -43,7 +43,6 @@
 dofile(minetest.get_modpath("coloredwood").."/wood.lua")
 dofile(minetest.get_modpath("coloredwood").."/fence.lua")
 dofile(minetest.get_modpath("coloredwood").."/stick.lua")
---dofile(minetest.get_modpath("coloredwood").."/ladder.lua")
 
 print("[Colored Wood] Loaded!")
 
