@@ -102,7 +102,6 @@ for shade = 1, 3 do
 		                {"default:stick", "default:stick", "default:stick"},
 		                {"default:stick", "default:stick", "default:stick"},
 		        },
-			replacements = { { "unifieddyes:"..shadename..huename, "vessels:glass_bottle"} }
 		})
 
 		minetest.register_craft({
@@ -112,7 +111,6 @@ for shade = 1, 3 do
 		                {"default:stick", "default:stick", "default:stick"},
 		                {"default:stick", "default:stick", "default:stick"},
 		        },
-			replacements = { { "unifieddyes:"..shadename..huename.."_s50", "vessels:glass_bottle"} }
 		})
 
 		minetest.register_craft( {
@@ -123,7 +121,6 @@ for shade = 1, 3 do
 				neutral_block,
 				"unifieddyes:"..shadename..huename
 			},
-			replacements = { { "unifieddyes:"..shadename..huename, "vessels:glass_bottle"} }
 		})
 
 		minetest.register_craft( {
@@ -134,7 +131,6 @@ for shade = 1, 3 do
 				neutral_block,
 				"unifieddyes:"..shadename..huename.."_s50"
 			},
-			replacements = { { "unifieddyes:"..shadename..huename.."_s50", "vessels:glass_bottle"} }
 		})
 
 	end
@@ -189,7 +185,6 @@ for hue = 1, 12 do
 	                {"default:stick", "default:stick", "default:stick"},
 	                {"default:stick", "default:stick", "default:stick"},
 	        },
-		replacements = { { "unifieddyes:light_"..huename, "vessels:glass_bottle"} }
 	})
 
 	minetest.register_craft( {
@@ -200,7 +195,6 @@ for hue = 1, 12 do
 			neutral_block,
 			"unifieddyes:light_"..huename
 		},
-		replacements = { { "unifieddyes:light_"..huename, "vessels:glass_bottle"} }
 	})
 end
 	
@@ -262,7 +256,6 @@ for grey = 1,5 do
 	                {"default:stick", "default:stick", "default:stick"},
 	                {"default:stick", "default:stick", "default:stick"},
 	        },
-		replacements = { { "unifieddyes:"..greyname, "vessels:glass_bottle"} }
 	})
 
 	minetest.register_craft( {
@@ -273,7 +266,6 @@ for grey = 1,5 do
 			neutral_block,
 			"unifieddyes:"..greyname3
 		},
-		replacements = { { "unifieddyes:"..greyname, "vessels:glass_bottle"} }
 	})
 
 end
