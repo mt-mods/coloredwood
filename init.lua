@@ -38,6 +38,79 @@
 --
 -- All materials are flammable and can be used as fuel.
 
+-- Hues are on a 30 degree spacing starting at red = 0 degrees.
+-- "s50" in a file/item name means "saturation: 50%".
+-- Texture brightness levels for the colors are 100%, 66% ("medium"),
+-- and 33% ("dark").
+
+coloredwood = {}
+
+coloredwood.shades = {
+	"dark_",
+	"medium_",
+	""		-- represents "no special shade name", e.g. full.
+}
+
+coloredwood.shades2 = {
+	"Dark ",
+	"Medium ",
+	""		-- represents "no special shade name", e.g. full.
+}
+
+coloredwood.hues = {
+	"red",
+	"orange",
+	"yellow",
+	"lime",
+	"green",
+	"aqua",
+	"cyan",
+	"skyblue",
+	"blue",
+	"violet",
+	"magenta",
+	"redviolet"
+}
+
+coloredwood.hues2 = {
+	"Red ",
+	"Orange ",
+	"Yellow ",
+	"Lime ",
+	"Green ",
+	"Aqua ",
+	"Cyan ",
+	"Sky Blue ",
+	"Blue ",
+	"Violet ",
+	"Magenta ",
+	"Red-violet "
+}
+
+coloredwood.greys = {
+	"black",
+	"darkgrey",
+	"grey",
+	"lightgrey",
+	"white"
+}
+
+coloredwood.greys2 = {
+	"Black ",
+	"Dark Grey ",
+	"Medium Grey ",
+	"Light Grey ",
+	"White "
+}
+
+coloredwood.greys3 = {
+	"black",
+	"darkgrey_paint",
+	"mediumgrey_paint",
+	"lightgrey_paint",
+	"white_paint"
+}
+
 -- All of the actual code is contained in separate lua files:
 
 dofile(minetest.get_modpath("coloredwood").."/wood.lua")

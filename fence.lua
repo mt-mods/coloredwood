@@ -11,90 +11,15 @@ local colored_block_walkable = "true"
 local colored_block_groups = {snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=2, not_in_creative_inventory=1}
 local colored_block_sound = "default.node_sound_wood_defaults()"
 
--- ------------------------------------------------------------------
--- Generate all of the base color node definitions and all variations
--- except for the greyscale stuff.
-
--- Hues are on a 30 degree spacing starting at red = 0 degrees.
--- "s50" in a file/item name means "saturation: 50%".
--- Texture brightness levels for the colors are 100%, 66% ("medium"),
--- and 33% ("dark").
-
-local shades = {
-	"dark_",
-	"medium_",
-	""		-- represents "no special shade name", e.g. full.
-}
-
-local shades2 = {
-	"Dark ",
-	"Medium ",
-	""		-- represents "no special shade name", e.g. full.
-}
-
-local hues = {
-	"red",
-	"orange",
-	"yellow",
-	"lime",
-	"green",
-	"aqua",
-	"cyan",
-	"skyblue",
-	"blue",
-	"violet",
-	"magenta",
-	"redviolet"
-}
-
-local hues2 = {
-	"Red ",
-	"Orange ",
-	"Yellow ",
-	"Lime ",
-	"Green ",
-	"Aqua ",
-	"Cyan ",
-	"Sky Blue ",
-	"Blue ",
-	"Violet ",
-	"Magenta ",
-	"Red-violet "
-}
-
-local greys = {
-	"black",
-	"darkgrey",
-	"grey",
-	"lightgrey",
-	"white"
-}
-
-local greys2 = {
-	"Black ",
-	"Dark Grey ",
-	"Medium Grey ",
-	"Light Grey ",
-	"White "
-}
-
-local greys3 = {
-	"black",
-	"darkgrey_paint",
-	"mediumgrey_paint",
-	"lightgrey_paint",
-	"white_paint"
-}
-
 for shade = 1, 3 do
 
-	local shadename = shades[shade]
-	local shadename2 = shades2[shade]
+	local shadename = coloredwood.shades[shade]
+	local shadename2 = coloredwood.shades2[shade]
 
 	for hue = 1, 12 do
 
-		local huename = hues[hue]
-		local huename2 = hues2[hue]
+		local huename = coloredwood.hues[hue]
+		local huename2 = coloredwood.hues2[hue]
 
 		local colorname     = colored_block_modname..":fence_"..shadename..huename
 		local pngnameinv    = colored_block_modname.."_fence_"..shadename..huename..".png"
@@ -218,8 +143,8 @@ end
 -- Generate the "light" shades separately, since they don"t have a low-sat version.
 
 for hue = 1, 12 do
-	local huename = hues[hue]
-	local huename2 = hues2[hue]
+	local huename = coloredwood.hues[hue]
+	local huename2 = coloredwood.hues2[hue]
 	local colorname    = colored_block_modname..":fence_light_"..huename
 	local pngname      = colored_block_modname.."_wood_light_"..huename..".png"
 	local pngnameinv   = colored_block_modname.."_fence_light_"..huename..".png"
@@ -289,9 +214,9 @@ end
 
 for grey = 1,5 do
 
-	local greyname = greys[grey]
-	local greyname2 = greys2[grey]
-	local greyname3 = greys3[grey]
+	local greyname = coloredwood.greys[grey]
+	local greyname2 = coloredwood.greys2[grey]
+	local greyname3 = coloredwood.greys3[grey]
 
 	local greyshadename = colored_block_modname..":fence_"..greyname
 	local pngname       = colored_block_modname.."_wood_"..greyname..".png"
