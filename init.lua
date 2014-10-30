@@ -104,11 +104,11 @@ coloredwood.greys2 = {
 }
 
 coloredwood.greys3 = {
-	"black",
-	"darkgrey_paint",
-	"mediumgrey_paint",
-	"lightgrey_paint",
-	"white_paint"
+	"dye:black",
+	"dye:dark_grey",
+	"dye:grey",
+	"dye:light_grey",
+	"dye:white"
 }
 
 -- All of the actual code is contained in separate lua files:

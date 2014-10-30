@@ -223,7 +223,7 @@ for grey = 1,5 do
 		recipe = {
 			neutral_block,
 			neutral_block,
-			"unifieddyes:"..greyname3
+			greyname3
 		},
 	})
 

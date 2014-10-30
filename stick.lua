@@ -112,7 +112,6 @@ for grey = 1,5 do
 
 	local greyname = coloredwood.greys[grey]
 	local greyname2 = coloredwood.greys2[grey]
-	local greyname3 = coloredwood.greys3[grey]
 
 	local greyshadename = colored_block_modname..":stick_"..greyname
 	local pngname       = colored_block_modname.."_stick_"..greyname..".png"
