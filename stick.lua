@@ -24,7 +24,7 @@ for shade = 1, 3 do
 		local s50colorname = colored_block_modname..":stick_"..shadename..huename.."_s50"
 		local s50pngname   = colored_block_modname.."_stick_"..shadename..huename.."_s50.png"
 		local s50itemdesc  = shadename2..huename2..colored_block_description.." (50% Saturation)"
-		local s50woodkname = colored_block_modname..":wood_"..shadename..huename.."_s50"
+		local s50woodname = colored_block_modname..":wood_"..shadename..huename.."_s50"
 
 		minetest.register_craft({
 		        type = "fuel",

@@ -107,7 +107,7 @@ for shade = 1, 3 do
 
 		minetest.register_craft( {
 			type = "shapeless",
-			output = colorname.." 2",
+			output = s50colorname.." 2",
 			recipe = {
 				neutral_block,
 				neutral_block,
