@@ -252,7 +252,7 @@ for grey = 1,5 do
 	minetest.register_craft({
 	        output = greyshadename.." 2",
 		recipe = {
-			{ "unifieddyes:"..greyname, "", "" },
+			{ greyname3, "", "" },
 	                {"default:stick", "default:stick", "default:stick"},
 	                {"default:stick", "default:stick", "default:stick"},
 	        },
