@@ -99,8 +99,8 @@ for shade = 1, 3 do
 		        output = colorname.." 2",
 			recipe = {
 				{ "unifieddyes:"..shadename..huename, "", "" },
-		                {"default:stick", "default:stick", "default:stick"},
-		                {"default:stick", "default:stick", "default:stick"},
+		                {"group:stick", "group:stick", "group:stick"},
+		                {"group:stick", "group:stick", "group:stick"},
 		        },
 		})
 
@@ -108,8 +108,8 @@ for shade = 1, 3 do
 		        output = s50colorname.." 2",
 			recipe = {
 				{ "unifieddyes:"..shadename..huename.."_s50", "", "" },
-		                {"default:stick", "default:stick", "default:stick"},
-		                {"default:stick", "default:stick", "default:stick"},
+		                {"group:stick", "group:stick", "group:stick"},
+		                {"group:stick", "group:stick", "group:stick"},
 		        },
 		})
 
@@ -182,8 +182,8 @@ for hue = 1, 12 do
 	        output = colorname.." 2",
 		recipe = {
 			{ "unifieddyes:light_"..huename, "", "" },
-	                {"default:stick", "default:stick", "default:stick"},
-	                {"default:stick", "default:stick", "default:stick"},
+	                {"group:stick", "group:stick", "group:stick"},
+	                {"group:stick", "group:stick", "group:stick"},
 	        },
 	})
 
@@ -253,8 +253,8 @@ for grey = 1,5 do
 	        output = greyshadename.." 2",
 		recipe = {
 			{ greyname3, "", "" },
-	                {"default:stick", "default:stick", "default:stick"},
-	                {"default:stick", "default:stick", "default:stick"},
+	                {"group:stick", "group:stick", "group:stick"},
+	                {"group:stick", "group:stick", "group:stick"},
 	        },
 	})
 

@@ -5,7 +5,6 @@
 
 local colored_block_modname = "coloredwood"
 local colored_block_description = "Stick"
-local neutral_block = "default:stick"
 
 for shade = 1, 3 do
 
