@@ -197,7 +197,37 @@ for hue = 1, 12 do
 		},
 	})
 end
-	
+
+-- extra recipes for default dye colors.
+
+for _, color in ipairs(coloredwood.default_hues) do
+	minetest.register_craft({
+		output = "coloredwood:fence_"..color.." 2",
+		recipe = {
+			{ "dye:"..color, "", "" },
+			{"group:stick", "group:stick", "group:stick"},
+			{"group:stick", "group:stick", "group:stick"},
+		},
+	})
+end
+
+minetest.register_craft({
+	output = "coloredwood:fence_light_red 2",
+	recipe = {
+		{ "dye:pink", "", "" },
+		{"group:stick", "group:stick", "group:stick"},
+		{"group:stick", "group:stick", "group:stick"},
+	},
+})
+
+minetest.register_craft({
+	output = "coloredwood:fence_dark_orange 2",
+	recipe = {
+		{ "dye:brown", "", "" },
+		{"group:stick", "group:stick", "group:stick"},
+		{"group:stick", "group:stick", "group:stick"},
+	},
+})
 
 -- ============================================================
 -- The 5 levels of greyscale.
