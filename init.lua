@@ -387,7 +387,7 @@ table.insert(coloredwood.old_13_color_nodes, "coloredwood:fence")
 minetest.register_lbm({
 	name = "coloredwood:recolor_basics",
 	label = "Convert fences and base 13-color wood to use UD extended palette",
-	run_at_every_load = true,
+	run_at_every_load = false,
 	nodenames = coloredwood.old_13_color_nodes,
 	action = function(pos, node)
 		local meta = minetest.get_meta(pos)
