@@ -227,9 +227,7 @@ end
 end
 
 minetest.override_item("default:wood", {
-	paramtype2 = "color",
 	palette = "unifieddyes_palette_extended.png",
-	place_param2 = 240,
 	ud_replacement_node = "coloredwood:wood_block",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, wood = 1, ud_param2_colorable = 1},
 })
@@ -255,7 +253,6 @@ minetest.register_node("coloredwood:fence", {
 
 minetest.override_item("default:fence_wood", {
 	palette = "unifieddyes_palette_extended.png",
-	place_param2 = 240,
 	ud_replacement_node = "coloredwood:fence",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, ud_param2_colorable = 1}
 })
