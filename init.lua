@@ -194,16 +194,19 @@ end
 
 	for _, i in pairs(minetest.registered_nodes) do
 		if string.find(i.name, "moreblocks:stair_wood")
-			  or string.find(i.name, "moreblocks:slab_wood")
-			  or string.find(i.name, "moreblocks:panel_wood")
-			  or string.find(i.name, "moreblocks:micro_wood")
-			  or string.find(i.name, "moreblocks:slope_wood") then
-			local s1, s2 = is_stairsplus(i.name, false)
-			minetest.override_item(i.name, {
-				ud_replacement_node = "coloredwood:"..s1.."_wood_grey"..s2,
-				paramtype2 = "colorfacedir",
-				groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, wood = 1, not_in_creative_inventory=1, ud_param2_colorable = 1},
-			})
+		  or string.find(i.name, "moreblocks:slab_wood")
+		  or string.find(i.name, "moreblocks:panel_wood")
+		  or string.find(i.name, "moreblocks:micro_wood")
+		  or string.find(i.name, "moreblocks:slope_wood") then
+			local a,b = string.find(i.name, "wood_tile")
+			if not a then
+				local s1, s2 = is_stairsplus(i.name, false)
+				minetest.override_item(i.name, {
+					ud_replacement_node = "coloredwood:"..s1.."_wood_grey"..s2,
+					paramtype2 = "colorfacedir",
+					groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, wood = 1, not_in_creative_inventory=1, ud_param2_colorable = 1},
+				})
+			end
 		end
 	end
 
