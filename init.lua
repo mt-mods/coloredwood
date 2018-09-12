@@ -103,17 +103,29 @@ if coloredwood.enable_stairsplus then
 
 	for _, i in pairs(minetest.registered_nodes) do
 
-		if (string.find(i.name, "moreblocks:stair_wood")
-		  or string.find(i.name, "moreblocks:slab_wood")
-		  or string.find(i.name, "moreblocks:panel_wood")
-		  or string.find(i.name, "moreblocks:micro_wood")
-		  or string.find(i.name, "moreblocks:slope_wood"))
+		local chk = string.sub(i.name, 1, 21)
+
+		if   chk == "moreblocks:stair_woo"
+		  or chk == "moreblocks:slab_wood"
+		  or chk == "moreblocks:panel_woo"
+		  or chk == "moreblocks:micro_woo"
+		  or chk == "moreblocks:slope_woo"
 		  and not string.find(i.name, "wood_tile") then
+
+			local class = string.sub(i.name, 12, 15)
+			local shape = string.sub(i.name, 22)
 
 			table.insert(coloredwood_cuts, i.name)
 
+			if chk ~= "moreblocks:slab_wood" then
+				class = string.sub(i.name, 12, 16)
+				shape = string.sub(i.name, 23)
+			end
+
 			minetest.override_item(i.name, {
 				groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, wood = 1, not_in_creative_inventory=1, ud_param2_colorable = 1},
+				paramtype2 = "colorfacedir",
+				airbrush_replacement_node = "coloredwood:"..class.."_wood_grey"..shape
 			})
 		end
 	end
