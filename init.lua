@@ -1,4 +1,4 @@
--- Colored Wood mod by Vanessa Ezekowitz
+-- Colored Wood mod by Vanessa "VanessaE" Dannenberg
 -- based on my unifieddyes template.
 --
 -- License:  WTFPL
