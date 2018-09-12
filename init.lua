@@ -9,11 +9,7 @@
 -- Colored wood is created by placing a regular wood block on the ground
 -- and then right-clicking on it with some dye.
 -- All materials are flammable and can be used as fuel.
---
--- Hues are on a 30 degree spacing starting at red = 0 degrees.
--- "s50" in a file/item name means "saturation: 50%".
--- Texture brightness levels for the colors are 100%, 66% ("medium"),
--- and 33% ("dark").
+
 
 coloredwood = {}
 
