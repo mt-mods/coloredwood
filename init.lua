@@ -22,34 +22,6 @@ if minetest.settings:get_bool("coloredwood_enable_stairsplus") == false or not m
 	coloredwood.enable_stairsplus = false
 end
 
-coloredwood.shades = {
-	"dark_",
-	"medium_",
-	""		-- represents "no special shade name", e.g. full.
-}
-
-coloredwood.shades2 = {
-	"Dark ",
-	"Medium ",
-	""		-- represents "no special shade name", e.g. full.
-}
-
-coloredwood.default_hues = {
-	"white",
-	"grey",
-	"dark_grey",
-	"black",
-	"violet",
-	"blue",
-	"cyan",
-	"dark_green",
-	"green",
-	"yellow",
-	"orange",
-	"red",
-	"magenta"
-}
-
 coloredwood.hues = {
 	"red",
 	"orange",
@@ -63,45 +35,6 @@ coloredwood.hues = {
 	"violet",
 	"magenta",
 	"redviolet"
-}
-
-coloredwood.hues2 = {
-	"Red ",
-	"Orange ",
-	"Yellow ",
-	"Lime ",
-	"Green ",
-	"Aqua ",
-	"Cyan ",
-	"Sky Blue ",
-	"Blue ",
-	"Violet ",
-	"Magenta ",
-	"Red-violet "
-}
-
-coloredwood.greys = {
-	"black",
-	"darkgrey",
-	"grey",
-	"lightgrey",
-	"white"
-}
-
-coloredwood.greys2 = {
-	"Black ",
-	"Dark Grey ",
-	"Medium Grey ",
-	"Light Grey ",
-	"White "
-}
-
-coloredwood.greys3 = {
-	"dye:black",
-	"dye:dark_grey",
-	"dye:grey",
-	"dye:light_grey",
-	"dye:white"
 }
 
 coloredwood.hues_plus_greys = {}
@@ -276,54 +209,5 @@ unifieddyes.register_color_craft({
 		"MAIN_DYE"
 	}
 })
-
--- ============================
--- convert the old static nodes
-
-coloredwood.old_static_nodes = {}
-coloredwood.old_13_color_nodes = {}
-
-for _, hue in ipairs(coloredwood.hues) do
-	table.insert(coloredwood.old_13_color_nodes, "coloredwood:wood_"..hue)
-	for _, sat in ipairs({"", "_s50"}) do
-		for _, val in ipairs ({"dark_", "medium_", "light_", ""}) do
-			table.insert(coloredwood.old_static_nodes, "coloredwood:wood_"..val..hue..sat)
-			table.insert(coloredwood.old_static_nodes, "coloredwood:fence_"..val..hue..sat)
-		end
-	end
-end
-
-for _, shade in ipairs(coloredwood.greys) do
-	table.insert(coloredwood.old_static_nodes, "coloredwood:wood_"..shade)
-	table.insert(coloredwood.old_static_nodes, "coloredwood:fence_"..shade)
-end
-
-table.insert(coloredwood.old_13_color_nodes, "coloredwood:wood_grey")
-
-
--- add all of the stairsplus nodes, if moreblocks is installed.
-if coloredwood.enable_stairsplus then
-	for _, shape in ipairs(circular_saw.names) do
-		local a = shape[1]
-		local b = shape[2]
-		for _, hue in ipairs(coloredwood.hues) do
-			for _, shade in ipairs(coloredwood.shades) do
-				table.insert(coloredwood.old_static_nodes, "coloredwood:"..a.."_wood_"..shade..hue..b)
-				table.insert(coloredwood.old_static_nodes, "coloredwood:"..a.."_wood_"..shade..hue.."_s50"..b)
-			end
-			table.insert(coloredwood.old_static_nodes, "coloredwood:"..a.."_wood_light_"..hue..b) -- light doesn't have extra shades or s50
-		end
-	end
-
-	for _, shape in ipairs(circular_saw.names) do
-		local a = shape[1]
-		local b = shape[2]
-		for _, hue in ipairs(coloredwood.greys) do
-			for _, shade in ipairs(coloredwood.shades) do
-				table.insert(coloredwood.old_static_nodes, "coloredwood:"..a.."_wood_"..hue..b)
-			end
-		end
-	end
-end
 
 print("[Colored Wood] Loaded!")
