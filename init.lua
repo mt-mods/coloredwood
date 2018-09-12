@@ -22,29 +22,6 @@ if minetest.settings:get_bool("coloredwood_enable_stairsplus") == false or not m
 	coloredwood.enable_stairsplus = false
 end
 
-coloredwood.hues = {
-	"red",
-	"orange",
-	"yellow",
-	"lime",
-	"green",
-	"aqua",
-	"cyan",
-	"skyblue",
-	"blue",
-	"violet",
-	"magenta",
-	"redviolet"
-}
-
-coloredwood.hues_plus_greys = {}
-
-for _, hue in ipairs(coloredwood.hues) do
-	table.insert(coloredwood.hues_plus_greys, hue)
-end
-
-table.insert(coloredwood.hues_plus_greys, "grey")
-
 -- helper functions
 
 local function is_stairsplus(name, colorized)
@@ -94,7 +71,7 @@ minetest.register_node("coloredwood:wood_block", {
 	sounds = default.node_sound_wood_defaults(),
 })
 
-for _, color in ipairs(coloredwood.hues_plus_greys) do
+for _, color in ipairs(unifieddyes.HUES_WITH_GREY) do
 
 	-- moreblocks/stairsplus support
 
