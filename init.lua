@@ -103,7 +103,7 @@ if coloredwood.enable_stairsplus then
 
 	for _, i in pairs(minetest.registered_nodes) do
 
-		local chk = string.sub(i.name, 1, 21)
+		local chk = string.sub(i.name, 1, 20)
 
 		if   chk == "moreblocks:stair_woo"
 		  or chk == "moreblocks:slab_wood"
@@ -125,7 +125,7 @@ if coloredwood.enable_stairsplus then
 			minetest.override_item(i.name, {
 				groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, wood = 1, not_in_creative_inventory=1, ud_param2_colorable = 1},
 				paramtype2 = "colorfacedir",
-				airbrush_replacement_node = "coloredwood:"..class.."_wood_grey"..shape
+				airbrush_replacement_node = "coloredwood:"..class.."_wood_grey_"..shape
 			})
 		end
 	end
