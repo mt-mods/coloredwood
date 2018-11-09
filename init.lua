@@ -1,8 +1,6 @@
 -- Colored Wood mod by Vanessa "VanessaE" Dannenberg
 -- based on my unifieddyes template.
 --
--- License:  WTFPL
---
 -- This mod provides 89 colors of wood, fences, and sticks, and enough
 -- cross-compatible recipes to make everything fit together naturally.
 --
