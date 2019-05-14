@@ -165,6 +165,7 @@ default.register_fence("coloredwood:fence", {
 
 minetest.override_item("default:fence_wood", {
 	palette = "unifieddyes_palette_extended.png",
+	airbrush_replacement_node = "coloredwood:fence",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, ud_param2_colorable = 1}
 })
 
