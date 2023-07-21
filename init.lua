@@ -28,7 +28,6 @@ local function is_stairsplus(name, colorized)
 
 	local class = string.sub(name, a+1, b-1) -- from colon to underscore is the class
 	local shape = ""
-	local rest
 	local colorshape
 
 	if class == "stair"
