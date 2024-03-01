@@ -61,6 +61,7 @@ minetest.register_node("coloredwood:wood_block", {
 	walkable = true,
 	sunlight_propagates = false,
 	groups = groups,
+	is_ground_content = false,
 	sounds = default.node_sound_wood_defaults(),
 })
 
