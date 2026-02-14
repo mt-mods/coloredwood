@@ -6,6 +6,9 @@
 --
 -- All materials are flammable and can be used as fuel.
 
+if unifieddyes and not unifieddyes.preserve_metadata then
+	error("Incompatible unifieddyes version, please update to the latest version to use this mod.")
+end
 
 local enable_stairsplus = true
 if core.settings:get_bool("coloredwood_enable_stairsplus") == false or not core.get_modpath("moreblocks") then
@@ -86,7 +89,6 @@ for _, color in ipairs(unifieddyes.HUES_WITH_GREY) do
 				after_place_node = function(_, placer, itemstack, pointed_thing)
 					core.rotate_node(itemstack, placer, pointed_thing)
 				end,
-				on_dig = not unifieddyes.preserve_metadata and unifieddyes.on_dig or nil,
 				preserve_metadata = unifieddyes.preserve_metadata,
 				groups = {
 					snappy=1, choppy=2, oddly_breakable_by_hand=2, flammable=2,
@@ -179,7 +181,6 @@ default.register_fence("coloredwood:fence", {
 	},
 	sounds = default.node_sound_wood_defaults(),
 	material = "coloredwood:wood_block",
-	on_dig = not unifieddyes.preserve_metadata and unifieddyes.on_dig or nil,
 	preserve_metadata = unifieddyes.preserve_metadata,
 })
 
