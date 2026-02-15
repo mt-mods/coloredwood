@@ -6,9 +6,12 @@
 --
 -- All materials are flammable and can be used as fuel.
 
+if unifieddyes and not unifieddyes.preserve_metadata then
+	error("Incompatible unifieddyes version, please update to the latest version to use this mod.")
+end
 
 local enable_stairsplus = true
-if minetest.settings:get_bool("coloredwood_enable_stairsplus") == false or not minetest.get_modpath("moreblocks") then
+if core.settings:get_bool("coloredwood_enable_stairsplus") == false or not core.get_modpath("moreblocks") then
 	enable_stairsplus = false
 end
 
@@ -48,11 +51,11 @@ end
 
 -- the actual nodes!
 
-local groups = table.copy(minetest.registered_items["default:wood"].groups)
+local groups = table.copy(core.registered_items["default:wood"].groups)
 groups.ud_param2_colorable = 1
 groups.not_in_creative_inventory=1
 
-minetest.register_node("coloredwood:wood_block", {
+core.register_node("coloredwood:wood_block", {
 	description = "Colored wooden planks",
 	tiles = { "coloredwood_base.png" },
 	paramtype = "light",
@@ -84,9 +87,9 @@ for _, color in ipairs(unifieddyes.HUES_WITH_GREY) do
 				paramtype2 = "colorfacedir",
 				palette = "unifieddyes_palette_"..color.."s.png",
 				after_place_node = function(_, placer, itemstack, pointed_thing)
-					minetest.rotate_node(itemstack, placer, pointed_thing)
+					core.rotate_node(itemstack, placer, pointed_thing)
 				end,
-				on_dig = unifieddyes.on_dig,
+				preserve_metadata = unifieddyes.preserve_metadata,
 				groups = {
 					snappy=1, choppy=2, oddly_breakable_by_hand=2, flammable=2,
 					not_in_creative_inventory=1, ud_param2_colorable = 1
@@ -103,12 +106,12 @@ local coloredwood_cuts = {}
 
 if enable_stairsplus then
 
-	local groups2 = table.copy(minetest.registered_items["default:wood"].groups)
+	local groups2 = table.copy(core.registered_items["default:wood"].groups)
 	groups2.wood = nil
 	groups2.ud_param2_colorable = 1
 	groups2.not_in_creative_inventory=1
 
-	for _, i in pairs(minetest.registered_nodes) do
+	for _, i in pairs(core.registered_nodes) do
 
 		local chk = string.sub(i.name, 1, 20)
 
@@ -129,7 +132,7 @@ if enable_stairsplus then
 				shape = string.sub(i.name, 23)
 			end
 
-			minetest.override_item(i.name, {
+			core.override_item(i.name, {
 				groups = groups2,
 				paramtype2 = "colorfacedir",
 				palette = "unifieddyes_palette_greys.png",
@@ -158,10 +161,10 @@ for _, mname in ipairs(coloredwood_cuts) do
 	})
 end
 
-groups = table.copy(minetest.registered_items["default:wood"].groups)
+groups = table.copy(core.registered_items["default:wood"].groups)
 groups.ud_param2_colorable = 1
 
-minetest.override_item("default:wood", {
+core.override_item("default:wood", {
 	palette = "unifieddyes_palette_extended.png",
 	airbrush_replacement_node = "coloredwood:wood_block",
 	groups = groups,
@@ -178,13 +181,13 @@ default.register_fence("coloredwood:fence", {
 	},
 	sounds = default.node_sound_wood_defaults(),
 	material = "coloredwood:wood_block",
-	on_dig = unifieddyes.on_dig,
+	preserve_metadata = unifieddyes.preserve_metadata,
 })
 
-groups = table.copy(minetest.registered_items["default:fence_wood"].groups)
+groups = table.copy(core.registered_items["default:fence_wood"].groups)
 groups.ud_param2_colorable = 1
 
-minetest.override_item("default:fence_wood", {
+core.override_item("default:fence_wood", {
 	palette = "unifieddyes_palette_extended.png",
 	airbrush_replacement_node = "coloredwood:fence",
 	groups = groups
@@ -225,8 +228,8 @@ unifieddyes.register_color_craft({
 	}
 })
 
-if minetest.get_modpath("signs_lib") then
-	minetest.override_item("coloredwood:fence", {
+if core.get_modpath("signs_lib") then
+	core.override_item("coloredwood:fence", {
 		check_for_pole = true
 	})
 end
